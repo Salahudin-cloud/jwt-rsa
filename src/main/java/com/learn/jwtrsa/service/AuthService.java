@@ -27,7 +27,4 @@ public class AuthService {
                 .message("Register successfully!")
                 .build();
     }
-
-
-
 }

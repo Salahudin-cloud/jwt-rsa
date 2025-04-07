@@ -17,7 +17,7 @@ public class JwtValidator {
         Algorithm algorithm = Algorithm.RSA256((RSAPublicKey) publicKey, null);
 
         JWTVerifier verifier = JWT.require(algorithm)
-                .withIssuer("jwt-rsas")
+                .withIssuer("jwt-rsa")
                 .build();
 
         return verifier.verify(token);

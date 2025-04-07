@@ -16,7 +16,7 @@ public class JwtProvider {
         return JWT.create()
                 .withSubject(username)
                 .withIssuer("jwt-rsa")
-                .withExpiresAt(new Date(System.currentTimeMillis() + 3600_000))
+                .withExpiresAt(new Date(System.currentTimeMillis() + 60_000))
                 .sign(Algorithm.RSA256(null, ((RSAPrivateKey) privateKey)));
     }
 

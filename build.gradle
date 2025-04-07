@@ -34,7 +34,8 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
 	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
-	implementation 'org.springframework.security:spring-security-web:6.4.4'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	testImplementation 'org.springframework.security:spring-security-test'
 
 	implementation 'me.paulschwarz:spring-dotenv:3.0.0'
 	implementation 'com.auth0:java-jwt:4.5.0'

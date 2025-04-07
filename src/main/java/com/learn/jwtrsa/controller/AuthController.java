@@ -1,6 +1,7 @@
 package com.learn.jwtrsa.controller;
 
 import com.learn.jwtrsa.dto.WebResponse;
+import com.learn.jwtrsa.dto.user.UserLoginRequest;
 import com.learn.jwtrsa.dto.user.UserRegisterRequest;
 import com.learn.jwtrsa.service.AuthService;
 import jakarta.validation.Valid;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("api/v1/user")
+@RequestMapping("api/v1/auth")
 public class AuthController {
 
     private final AuthService authService;
@@ -27,4 +28,12 @@ public class AuthController {
         return authService.registerUser(request);
     }
 
+    @PostMapping(
+            path = "/login",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public WebResponse<String> login(@Valid @RequestBody UserLoginRequest request) {
+        return authService.loginUser(request);
+    }
 }

@@ -14,6 +14,5 @@ spring:
 logging:
   level:
     root: info
-
 debug: false
 trace: false
